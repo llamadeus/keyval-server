@@ -17,7 +17,7 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build \
 #############################
 # STEP 2 build a small image
 #############################
-FROM scratch
+FROM alpine:3.13.5
 
 # Copy our static executable
 COPY --from=builder /go/bin/keyval-server /usr/bin/keyval-server
